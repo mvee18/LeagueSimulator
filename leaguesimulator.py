@@ -17,7 +17,6 @@ myteam = myteam.split(',')
 if len(myteam) is not 5:
     raise Exception("This is not the correct number of champions.")
 
-print(myteam)
 
 winrateslist = []
 averages = []
@@ -27,7 +26,6 @@ def average_winrate(winrates):
     average = sum(winrates) / 5
     averages.append(average)
     winrateslist.clear()
-    print(averages)
 
 
 def data_extraction(locusnumber):
@@ -38,7 +36,7 @@ def data_extraction(locusnumber):
 def find_location(team):
     for champion in range(len(myteam)):
         location = np.where(champnames == team[champion])
-        print(champnames[location])
+#        print(champnames[location])
         locusnumber = location[0]
         data_extraction(locusnumber)
 
